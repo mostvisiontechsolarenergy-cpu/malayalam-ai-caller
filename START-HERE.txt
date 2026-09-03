@@ -1,0 +1,26 @@
+DCREATION - SIMPLE START
+========================
+
+DAILY USE
+1. Double-click Open-Dcreation.cmd.
+2. Wait until the browser opens at the Dcreation login page.
+
+The daily launcher does NOT rebuild the application. With Docker Desktop already
+running, the normal target is under one minute. It also starts the secure calling
+callback in the background.
+
+FIRST INSTALL OR APPLICATION DEPENDENCY UPDATE
+Double-click Update-Dcreation.cmd once. A rebuild can take several minutes and is
+not required for normal daily use.
+
+AFTER RESTARTING WINDOWS
+You can still double-click Open-Dcreation.cmd. It will try to start Docker Desktop
+automatically. Docker's first start after a Windows reboot may take longer than one
+minute; later Dcreation starts should be faster.
+
+IMPORTANT
+- Do not run `docker compose up --build -d` for daily use.
+- Do not close Docker Desktop while using Dcreation or AI phone calls.
+- If the login page is ready but the calling callback is still starting, wait a few
+  seconds and refresh the AI Phone Calls page. The dashboard no longer waits for the
+  external phone callback before opening.

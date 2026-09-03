@@ -1,0 +1,56 @@
+{
+  "name": "Dcreation - Local Connection Check",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1e367e36-74b4-4bf6-af3d-6cb5477f32cf",
+      "name": "Run connection check",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.DCREATION_API_BASE_URL + '/automation/status' }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Automation-Secret",
+              "value": "={{ $env.DCREATION_AUTOMATION_SECRET }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9dbfc080-54ec-4ec0-87be-178e20148076",
+      "name": "Check Dcreation API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    }
+  ],
+  "connections": {
+    "Run connection check": {
+      "main": [
+        [
+          {
+            "node": "Check Dcreation API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "versionId": "0d64d028-43f8-4aa6-8421-0f084c89e861",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}

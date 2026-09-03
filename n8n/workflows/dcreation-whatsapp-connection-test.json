@@ -1,0 +1,58 @@
+{
+  "id": "wA7P2kLm9Qx4Tn6B",
+  "name": "Dcreation - WhatsApp Connection Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "775b814f-1b71-4ea6-97e4-55a879270180",
+      "name": "Run safe test manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendTemplate",
+        "phoneNumberId": "1292397363950637",
+        "recipientPhoneNumber": "918590485905",
+        "template": "hello_world|en_US",
+        "components": {}
+      },
+      "id": "827862ae-fc7d-4f7f-949c-84f59bc15975",
+      "name": "Send Meta hello-world template",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
+      "position": [520, 300],
+      "credentials": {
+        "whatsAppApi": {
+          "id": "9BeYjjPd9ehnqEza",
+          "name": "WhatsApp account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Run safe test manually": {
+      "main": [
+        [
+          {
+            "node": "Send Meta hello-world template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "versionId": "ce7e451d-8007-4749-8d3e-66ab22a36ccd",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
